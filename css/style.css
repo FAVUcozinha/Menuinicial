@@ -100,41 +100,7 @@ footer {
     padding: 0;
 }
 
-/* Slideshow */
-.slideshow-section {
-    position: relative;
-    width: 100%;
-    overflow: hidden;
-    margin: 0;
-    height: 50vh;
-}
-
-.slideshow {
-    display: flex;
-    width: calc(100% * 15); /* Ajusta a largura com base no número de slides */
-    height: 100%;
-    animation: slideAnimation 120s linear infinite;
-}
-
-.slide {
-    width: 100%;
-    flex-shrink: 0;
-}
-
-.slide img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    margin: 0;
-}
-
-/* Animação */
-@keyframes slideAnimation {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-100%); }
-}
-
-/* Mobile */
+/* Versão Mobile */
 @media (max-width: 768px) {
     .header-image,
     .main-image {
@@ -158,4 +124,78 @@ footer {
     .slideshow-section {
         height: 30vh;
     }
+}
+
+/* Versão Web */
+@media (min-width: 769px) {
+    .buttons-container {
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 20px;
+        width: calc(100% - 1cm);
+        max-width: 100%;
+        margin: 0 auto;
+    }
+
+    .button {
+        font-size: 30px;
+        padding: 15px 20px;
+        width: 100%;
+        max-width: 100%;
+        white-space: nowrap;
+        height: auto;
+        box-sizing: border-box;
+        border-radius: 25px;
+    }
+}
+
+/* Slideshow */
+.slideshow-section {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    height: 50vh; /* Ajuste a altura conforme necessário */
+}
+
+.slideshow {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    animation: slideAnimation 60s infinite; /* Animação ajustada */
+}
+
+.slide {
+    width: 100%;
+    flex-shrink: 0;
+    display: flex;
+    justify-content: center; /* Centraliza o conteúdo do slide */
+    align-items: center; /* Centraliza verticalmente */
+}
+
+.slide img {
+    width: auto; /* Mantém a proporção original */
+    height: 100%; /* Ajusta a altura ao contêiner */
+    object-fit: contain; /* Garante que a imagem se encaixe sem cortes */
+    display: block; /* Evita comportamento inesperado */
+    margin: 0 auto; /* Centraliza horizontalmente */
+}
+
+/* Animação para transição dos slides */
+@keyframes slideAnimation {
+    0% { transform: translateX(0); }
+    6.67% { transform: translateX(-100%); }
+    13.33% { transform: translateX(-200%); }
+    20% { transform: translateX(-300%); }
+    26.67% { transform: translateX(-400%); }
+    33.33% { transform: translateX(-500%); }
+    40% { transform: translateX(-600%); }
+    46.67% { transform: translateX(-700%); }
+    53.33% { transform: translateX(-800%); }
+    60% { transform: translateX(-900%); }
+    66.67% { transform: translateX(-1000%); }
+    73.33% { transform: translateX(-1100%); }
+    80% { transform: translateX(-1200%); }
+    86.67% { transform: translateX(-1300%); }
+    93.33% { transform: translateX(-1400%); }
+    100% { transform: translateX(-1500%); }
 }
