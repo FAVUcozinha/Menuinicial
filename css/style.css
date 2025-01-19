@@ -112,7 +112,7 @@ footer {
 .slideshow {
     display: flex;
     width: calc(100% * 15); /* Ajusta a largura para 15 slides */
-    animation: slideAnimation 30s linear infinite; /* Duração ajustada */
+    animation: slideAnimation 30s linear infinite; /* Loop infinito e suave */
 }
 
 .slide {
