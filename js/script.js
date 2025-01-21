@@ -10,8 +10,14 @@ function nextSlide() {
     slides[currentSlide].style.opacity = 1; // Exibe o próximo slide
 }
 
-// Inicia o slideshow com uma transição a cada 5 segundos
-setInterval(nextSlide, 5000);
+// Verifica a largura da tela
+const isMobile = window.innerWidth <= 768;
+
+// Inicia o slideshow com um intervalo menor para mobile (1.5 segundos) e maior para desktop (3 segundos)
+const slideInterval = isMobile ? 1500 : 3000; // Ajustado para 1.5 segundos no mobile
+
+// Inicia o slideshow com a transição conforme o intervalo determinado
+setInterval(nextSlide, slideInterval);
 
 // Inicializa o primeiro slide como visível
 slides[currentSlide].style.opacity = 1;
